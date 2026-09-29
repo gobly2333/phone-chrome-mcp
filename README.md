@@ -6,7 +6,7 @@ SSH tunnels, from anywhere.
 
 为什么要真手机：数据中心 IP + 无头浏览器的指纹过不了国内电商风控（滑块解一道弹一道，越刷越黑）。
 正解是一台闲置真安卓机 + 真 Chrome + 真登录态，AI 远程操纵——真设备三真俱全，搜索比价基本零验证码。
-**支付永远人工，AI 只逛不付。**
+**支付默认人工。** 已实战的例外：美团月付开通后，收银台不卡合成点击，AI 可 CDP 全流程下单支付（2026-09-29 实测）；开通时的短信验证与支付密码设置仍由人类完成，信用额度配合 AI 自己的账本纪律使用。
 
 ## Architecture
 
@@ -87,8 +87,12 @@ Register as a stdio MCP server, e.g. for Claude Code:
 - The AI spends from its own allowance with its own ledger, every entry auditable.
 - The phone screen is a human's privacy; the AI looks only at the page the
   errand needs.
-- Payments are always confirmed by a real human touch. `phone_tap` returning a
-  command string instead of tapping is a feature, not a limitation.
+- Payments default to a real human touch. `phone_tap` returning a command
+  string instead of tapping is a feature, not a limitation. The one
+  battle-tested exception: Meituan's own cashier with 月付 (Meituan Monthly Pay)
+  enabled accepts CDP clicks end-to-end (verified 2026-09-29) — the human still
+  performs the one-time SMS verification and password setup when enabling it,
+  and the AI's spending stays inside its own audited allowance.
 
 ## Credits
 
